@@ -1,0 +1,23 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+      
+    <h:head>
+        <title>Robot</title>
+        <link href="estilos.css" rel="stylesheet" type="text/css"></link>
+    </h:head>
+    <h:body>
+        <h1><center>MEGAS 14.1</center></h1>
+        <center><img src="images/megasxlr.jpg" /></center>
+        <h3 class="op1"> Ingrese su usuario </h3>
+        <h:form class="op1">
+                Login:<br/>
+                <h:inputText id="login" size="30" required="true" requiredMessage="Ingrese su usario" value="#{accesoMB.login}" /><br/>
+                Password: <br/>
+                <h:inputSecret id="pass" size="30" required="true" requiredMessage="Ingrese su contraseña"  value="#{accesoMB.pass}"/><br/>
+                <p:commandButton value="Aceptar" action="#{accesoMB.validarUsuario()}" />
+            </h:form>
+    </h:body>
+</html>

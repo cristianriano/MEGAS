@@ -1,0 +1,65 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+     xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core" 
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <title>Robot</title>
+        <link href="estilos.css" rel="stylesheet" type="text/css"></link>
+    </h:head>
+    <h:body>
+        <h:form>
+            <p:megaMenu autoDisplay="false">
+                <p:submenu label="Usuarios" >
+                <p:column>  
+                <p:submenu label="Gestion">
+                    <p:menuitem value="Crear"  action="crearUsuario"/>  
+                    <p:menuitem value="Buscar y Editar" action="gestionarUsuarios" />  
+                    <p:menuitem value="Eliminar" action="eliminarUsuario" />  
+                    <p:menuitem value="Listar" action="#{usuarioMB.listarUsuarios()}" />  
+                </p:submenu>
+                </p:column>  
+                </p:submenu>
+                <p:submenu label="MEGAS" >
+                <p:column>  
+                <p:submenu label="Control" >
+                    <p:menuitem value="Manual" action="controlManual" />
+                    <p:menuitem value="Voz" action="controlVoz" />
+                </p:submenu>
+                </p:column>  
+                </p:submenu>
+                <p:submenu label="Cuenta" >
+                    <p:column>
+                        <p:submenu label="Control" >
+                            <p:menuitem value="Cambiar contraseña" action="cambiarPass" />
+                            <p:menuitem value="Eliminar cuenta" action="eliminarCuenta" />
+                        </p:submenu>
+                    </p:column>
+                </p:submenu>
+            </p:megaMenu>  
+       </h:form>
+        <h:dataTable value="#{usuarioMB.usuarios}" var="ests">
+            <h:column>
+                <f:facet name="header">
+                    <h:outputText value="Nombre"/>
+                </f:facet>
+                <h:outputText value="#{ests.nombre}"/>
+            </h:column>
+            <h:column>
+                <f:facet name="header">
+                    <h:outputText value="Login"/>
+                </f:facet>
+                <h:outputText value="#{ests.login}"/>
+            </h:column>
+            <h:column>
+                <f:facet name="header">
+                    <h:outputText value="Administrador"/>
+                </f:facet>
+                <h:outputText value="#{ests.tipo}"/>
+            </h:column>
+        </h:dataTable>
+    </h:body>
+</html>
+

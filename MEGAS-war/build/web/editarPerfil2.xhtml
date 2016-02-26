@@ -1,0 +1,44 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <title>Robot</title>
+        <link href="estilos.css" rel="stylesheet" type="text/css"></link>
+    </h:head>
+    <h:body>
+        <h:form>
+            <p:megaMenu autoDisplay="false">
+                <p:submenu label="Cuenta" >
+                    <p:column>
+                        <p:submenu label="Control" >
+                            <p:menuitem value="Cambiar contraseña" action="cambiarPass2" />
+                            <p:menuitem value="Eliminar cuenta" action="eliminarCuenta2" />
+                            <p:menuitem value="Editar perfil" action="editarPerfil2" />
+                        </p:submenu>
+                    </p:column>
+                </p:submenu>
+                <p:submenu label="MEGAS" >
+                <p:column>  
+                <p:submenu label="Control" >
+                    <p:menuitem value="Manual" action="controlManual2" />
+                    <p:menuitem value="Voz" action="controlVoz2" />
+                </p:submenu>
+                </p:column>
+                </p:submenu>
+            </p:megaMenu>
+        </h:form>
+        <h2> Editar cuenta </h2>
+        <h:form id="datos">
+            <p:growl id="mensajes" />
+            Login: 
+            <h:outputText value="#{accesoMB.user.login}" /><br/>
+            <h:inputText size="30" required="true" requiredMessage="Ingrese un login" value="#{accesoMB.login}" /><br/>
+            Nombre:  
+            <h:outputText value="#{accesoMB.user.nombre}" /><br/>
+            <h:inputText size="30" required="true" requiredMessage="Ingrese un nombre" value="#{accesoMB.nombre}" /><br/>
+            <p:commandButton value="Editar"  actionListener="#{accesoMB.editarPerfil()}" update="datos" />
+        </h:form>
+    </h:body>
+</html>

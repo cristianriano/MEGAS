@@ -1,0 +1,23 @@
+h1{
+     color:steelblue;
+     font-family:fantasy;
+     }
+body{
+     background-color:#b0c4de;
+     }
+h2{
+     color:steelblue;
+     font-family:serif; 
+     }
+form{
+     color:steelblue;
+     font-family:fantasy;
+     size: B4;
+     }
+.op1{
+     font-family: cursive;
+     color:steelblue;
+            }
+.adelante{
+    background: url(images/adelante.jpg);            
+            }
